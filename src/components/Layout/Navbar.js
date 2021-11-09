@@ -12,6 +12,16 @@ const Navbar = () => {
   const authLink = (
     <ul>
       <li>
+        <Link to="/profiles">
+          <span> Developers</span>
+        </Link>
+      </li>
+      <li>
+        <Link to="/posts">
+          <span> Posts</span>
+        </Link>
+      </li>
+      <li>
         <Link to="/dashboard">
           <i className="fas fa-user"></i>
           <span> Dashboard</span>
@@ -27,6 +37,11 @@ const Navbar = () => {
   );
   const guestLink = (
     <ul>
+      <li>
+        <Link to="/profiles">
+          <span> Developers</span>
+        </Link>
+      </li>
       <li>
         <Link to="/">Developers</Link>
       </li>

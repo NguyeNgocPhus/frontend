@@ -49,7 +49,7 @@ function EditProfile() {
           fakeData[data] = "";
         }
       });
-      console.log(fakeData);
+
       setFormData(fakeData);
     }
   }, [dispatch, loading, profile]);
