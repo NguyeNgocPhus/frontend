@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Link, Redirect, useHistory } from "react-router-dom";
 import { setAlert } from "../../actions/alertAction";
 import { useDispatch, useSelector } from "react-redux";
 import { authAction } from "../../actions/authAction";
@@ -11,7 +11,7 @@ function Register() {
     password: "",
     passwordConfirm: "",
   });
-
+  const history = useHistory();
   const stateAuth = useSelector((state) => state.auth.isAuthenticated);
   const dispatch = useDispatch();
   const onChange = (e) => {
@@ -23,7 +23,7 @@ function Register() {
     if (password !== passwordConfirm) {
       dispatch(setAlert("vui long nhap lai mat khau cho dung dmmm", "danger"));
     } else {
-      dispatch(authAction({ name, email, password }));
+      dispatch(authAction({ name, email, password }, history));
     }
   };
   if (stateAuth) {
